@@ -224,6 +224,25 @@
     "command": "list.toggleExpand",
     "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsRoot && explorerResourceIsFolder && !inputFocus"
   },
+  // Terminal
+  {
+    "key": "space t f",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)"
+  },
+  {
+    "key": "space t s",
+    "command": "workbench.action.terminal.newWithCwd",
+    "when": "vim.mode == 'Normal' && editorTextFocus",
+    "args": {
+      "cwd": "${fileDirname}"
+    }
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminalFocus"
+  },
   // Debug
   {
     "key": "space d a",
