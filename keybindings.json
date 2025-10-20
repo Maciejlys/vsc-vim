@@ -150,9 +150,9 @@
         {
           "command": "workbench.action.terminal.sendSequence",
           "args": {
-            "text": "lazygit\r",
+            "text": "lazygit\r"
           }
-        },
+        }
       ]
     }
   },
@@ -245,14 +245,13 @@
   },
   {
     "key": "escape",
-    "command": "runCommands",
-    "when": "terminalFocus",
-    "args": {
-      "commands": [
-        "workbench.action.closeActiveEditor",
-        "workbench.action.focusActiveEditorGroup"
-      ]
-    }
+    "command": "workbench.action.closeActiveEditor",
+    "when": "terminalFocus && activeEditor && isInEmbeddedEditor"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminalFocus && !activeEditor"
   },
   // Debug
   {
