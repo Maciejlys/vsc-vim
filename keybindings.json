@@ -146,8 +146,13 @@
     "when": "vim.mode == 'Normal' && (editorTextFocus || !inputFocus)",
     "args": {
       "commands": [
-        "workbench.view.scm",
-        "workbench.scm.focus"
+        "workbench.action.createTerminalEditor",
+        {
+          "command": "workbench.action.terminal.sendSequence",
+          "args": {
+            "text": "lazygit\r",
+          }
+        },
       ]
     }
   },
@@ -240,8 +245,14 @@
   },
   {
     "key": "escape",
-    "command": "workbench.action.terminal.toggleTerminal",
-    "when": "terminalFocus"
+    "command": "runCommands",
+    "when": "terminalFocus",
+    "args": {
+      "commands": [
+        "workbench.action.closeActiveEditor",
+        "workbench.action.focusActiveEditorGroup"
+      ]
+    }
   },
   // Debug
   {
